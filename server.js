@@ -20,4 +20,14 @@ app.get('/api', (req, res) => {
   });
 });
 
+app.post('/trends', (req, res) => {
+  // req: trend query
+  // res: query response
+});
+
+app.post('/news', (req, res) => {
+  // req: news query
+  // res: query response
+});
+
 module.exports = app;
