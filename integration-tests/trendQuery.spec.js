@@ -18,8 +18,8 @@ describe('Backdate By Months', () => {
     var expected = new Date(2016, 11, 1);
     expect(actual).to.deep.equal(expected);
     clock.restore();
-  })
-})
+  });
+});
 
 describe('Sanitize Google Trends results', () => {
   it('should convert JSON to formatted array', () => {
