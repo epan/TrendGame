@@ -6,6 +6,7 @@ var sinon = require('sinon');
 // Utility methods
 var backDate = require('../utilities/backDate');
 var sanitizeTrend = require('../utilities/sanitizeTrend');
+var trendQuery = require('../utilities/trendQuery');
 
 // Fixtures
 var trendRaw = require('./fixtures/trend-raw.json');
@@ -26,5 +27,11 @@ describe('Sanitize Google Trends results', () => {
     var actual = sanitizeTrend(trendRaw);
     var expected = trendSanitized;
     expect(actual).to.deep.equal(expected);
+  });
+});
+
+xdescribe('Integration test for Google Trends', () => {
+  it('should take a keyword and callback for google trends queries', () => {
+
   });
 });

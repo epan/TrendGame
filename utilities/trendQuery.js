@@ -1,15 +1,16 @@
 const googleTrends = require('google-trends-api');
-const backDateByMonth = require('./backDate');
+const backDateByMonths = require('./backDate');
+const sanitizeTrend = require('./sanitizeTrend');
 
 const trendQuery = (keyword, callback) => {
   const options = {
     keyword: keyword,
-    startTime: backDateByMonth(15),
+    startTime: backDateByMonths(15),
   };
 
   googleTrends.interestOverTime(options)
   .then((results) => {
-    callback(results);
+    callback(sanitizeTrend(results));
   })
   .catch((err) => {
     console.error('Error getting trends:', err);
