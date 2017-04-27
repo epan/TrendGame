@@ -6,7 +6,7 @@ const morgan = require('morgan');
 
 const app = express();
 const IP = '127.0.0.1';
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/client/public'));
 app.use(bodyParser.json());
