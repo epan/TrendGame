@@ -1,11 +1,10 @@
 const googleTrends = require('google-trends-api');
-const app = require('../server');
+const backDateByMonth = require('./backDate');
 
 const trendQuery = (keyword, callback) => {
   const options = {
-    keyword: keyword
-    // startTime: today,
-    // endTime: 
+    keyword: keyword,
+    startTime: backDateByMonth(15),
   };
 
   googleTrends.interestOverTime(options)
