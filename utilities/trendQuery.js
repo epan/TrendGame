@@ -9,12 +9,12 @@ const trendQuery = (keyword, callback) => {
   };
 
   googleTrends.interestOverTime(options)
-  .then(results => {
-    callback(sanitizeTrend(results));
-  })
-  .catch(err => {
-    console.error('Error getting trends:', err);
-  });
+    .then(results => {
+      callback(sanitizeTrend(results));
+    })
+    .catch(err => {
+      console.error('Error getting trends:', err);
+    });
 };
 
 module.exports = trendQuery;
