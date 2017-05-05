@@ -27,7 +27,7 @@ app.get('/api', (req, res) => {
 app.post('/', (req, res) => {
   trendQuery(req.body.keyword, (err, data) => {
     if (err) {
-      console.error('Error:', err);
+      res.status(500).send('Error:', err);
     } else {
       res.send(data);
     }
