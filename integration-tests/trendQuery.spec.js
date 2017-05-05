@@ -24,7 +24,10 @@ describe('Backdate By Months', () => {
 
 describe('Sanitize Google Trends results', () => {
   it('should convert JSON to formatted array', () => {
-    var actual = sanitizeTrend(trendRaw);
+    // googleTrends.interestOvertime returns a stringified JSON
+    // but we stored it in the fixtures as a JSON for readability
+    // so we are stringifying it here to match behavior in the wild
+    var actual = sanitizeTrend(JSON.stringify(trendRaw));
     var expected = trendSanitized;
     expect(actual).to.deep.equal(expected);
   });

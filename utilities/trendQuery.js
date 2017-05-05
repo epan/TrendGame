@@ -9,10 +9,10 @@ const trendQuery = (keyword, callback) => {
   };
 
   googleTrends.interestOverTime(options)
-  .then((results) => {
-    callback(sanitizeTrend(JSON.parse(results)));
+  .then(results => {
+    callback(sanitizeTrend(results));
   })
-  .catch((err) => {
+  .catch(err => {
     console.error('Error getting trends:', err);
   });
 };
