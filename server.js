@@ -1,4 +1,4 @@
-const trendQuery = require('./utilities/trendQuery');
+const makeTimeline = require('./utilities/makeTimeline');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -24,8 +24,8 @@ app.get('/api', (req, res) => {
   });
 });
 
-app.post('/', (req, res) => {
-  trendQuery(req.body.keyword, (err, data) => {
+app.post('/api/timeline', (req, res) => {
+  makeTimeline(req.body.keyword, (err, data) => {
     if (err) {
       res.status(500).send('Error:', err);
     } else {
