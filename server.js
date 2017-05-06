@@ -24,8 +24,8 @@ app.get('/api', (req, res) => {
   });
 });
 
-app.post('/api/timeline', (req, res) => {
-  makeTimeline(req.body.keyword, (err, data) => {
+app.get('/api/timeline', (req, res) => {
+  makeTimeline(req.query.q, (err, data) => {
     if (err) {
       res.status(500).send('Error:', err);
     } else {
