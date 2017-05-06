@@ -4,7 +4,7 @@ const findPeaks = function(timeSeries) {
   timeSeries.forEach((data) => {
     if (data.popularity > peaks[0][1]) {
       peaks.length = 0;
-      peaks.push([data.time, data.popularity]);
+      peaks.push([data.date, data.popularity]);
     }
   });
 

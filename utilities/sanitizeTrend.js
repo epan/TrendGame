@@ -9,7 +9,7 @@ module.exports = (rawTimeline) => {
 
   return parsedTimeline.default.timelineData.map((point) => {
     return {
-      time: parseInt(point.time),
+      date: parseInt(point.time),
       formattedTime: point.formattedTime,
       formattedAxisTime: point.formattedAxisTime,
       popularity: point.value[0]
