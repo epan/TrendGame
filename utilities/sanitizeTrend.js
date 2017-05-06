@@ -12,7 +12,7 @@ module.exports = (rawTimeline) => {
       time: parseInt(point.time),
       formattedTime: point.formattedTime,
       formattedAxisTime: point.formattedAxisTime,
-      value: point.value[0]
+      popularity: point.value[0]
     };
   });
 };
