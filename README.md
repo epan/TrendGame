@@ -3,13 +3,13 @@
 
 ## Team
 
-- Alex 
+- Alex
 - Eric
 - Fu Fei
 - Prateek
 
 ## Usage
-> Go to URL: To come
+> Go to URL: [https://trend-game.herokuapp.com/](https://trend-game.herokuapp.com/)
 
 ## Requirements
 
@@ -28,11 +28,10 @@ From the root directory:
 
 From the root directory:
 
-```
-npm run dev
-npm start
-go to http://127.0.0.1:8080
-```
+1. In one terminal window, run `> npm run dev`
+2. In another terminal window, run `> npm start:watch`
+3. go to [http://127.0.0.1:8080](http://127.0.0.1:8080)
+
 
 ### Roadmap
 
