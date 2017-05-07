@@ -30,7 +30,7 @@ From the root directory:
 From the root directory:
 
 1. In one terminal window, run `> npm run dev`
-2. In another terminal window, run `> npm start:watch`
+2. In another terminal window, run `> npm run start:watch`
 3. go to [http://127.0.0.1:8080](http://127.0.0.1:8080)
 4. Don't forget you'll need an [Aylien News API key](https://newsapi.aylien.com/)
 
