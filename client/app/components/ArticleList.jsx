@@ -3,10 +3,10 @@ import Article from './Article.jsx';
 
 const ArticleList = ({ storyPoint }) => {
   console.log('storyPoint', storyPoint);
-  console.log('doesn\'t have headline', (!'headline' in storyPoint));
+  console.log('doesn\'t have stories', (!storyPoint.hasOwnProperty('stories')));
   let articles;
 
-  if (!storyPoint.hasOwnProperty('headline')) {
+  if (!storyPoint.hasOwnProperty('stories')) {
     articles = <div>no story point yet</div>;
   } else {
     let { formattedTime, stories } = storyPoint;

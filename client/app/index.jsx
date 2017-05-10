@@ -40,6 +40,8 @@ class App extends React.Component {
       console.log('This is the dataTuple', dataTuple);
       this.setState({data: dataTuple});
       console.log(this.state.start, this.state.end, this.state.data);
+
+      this.setState({ storyPoint: this.findStoryPoint(response.data) });
     })
     .catch(function (error) {
       console.log(error);
