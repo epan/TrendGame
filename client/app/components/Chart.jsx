@@ -1,8 +1,8 @@
 import React from 'react';
-import { Chart } from 'react-google-charts'
+import { Chart } from 'react-google-charts';
 
 export default class TrendChart extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
   }
