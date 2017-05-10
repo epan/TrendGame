@@ -18,29 +18,22 @@ class App extends React.Component {
   }
 
   collectData(trend) {
-    this.setState({trend: trend});
     axios.get('/api/timeline', {
-      params: {
-        q: trend
-      }
+      params: { q: trend }
     })
-    .then( response => {
-      console.log('This is the reponse!', response.data);
+    .then(response => {
       let timeline = response.data;
-
       this.setState({
+        trend: trend,
         start: timeline[0].date,
         end: timeline[timeline.length - 1].date,
         storyPoint: this.findStoryPoint(timeline),
         data: this.makeChartPoints(timeline)
       });
-
-      console.log(this.state.start, this.state.end, this.state.data);
     })
-    .catch(function (error) {
-      console.log(error);
+    .catch(error => {
+      console.error(error);
     });
-    console.log(trend);
   }
 
   makeChartPoints (timeline) {
@@ -48,7 +41,6 @@ class App extends React.Component {
     timeline.forEach(point => {
       dataTuple.push( [point.date, point.popularity] );
     });
-    console.log('This is the dataTuple', dataTuple);
     return dataTuple;
   }
 
