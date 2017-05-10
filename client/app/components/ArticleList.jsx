@@ -2,8 +2,6 @@ import React from 'react';
 import Article from './Article.jsx';
 
 const ArticleList = ({ storyPoint }) => {
-  console.log('storyPoint', storyPoint);
-  console.log('doesn\'t have stories', (!storyPoint.hasOwnProperty('stories')));
   let articles;
 
   if (!storyPoint.hasOwnProperty('stories')) {
