@@ -1,10 +1,13 @@
 import React from 'react';
 import Article from './Article.jsx';
 
-export default class ArticleList extends React.Component {
-  render () {
-    return (
+const ArticleList = ({ storyPoint }) => {
+  console.log('storyPoint', storyPoint);
+  return (
+    <div>
       <Article/>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default ArticleList;
