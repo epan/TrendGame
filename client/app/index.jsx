@@ -22,9 +22,9 @@ class App extends React.Component {
       params: {
         q: trend
       }
-     })
+    })
     .then( response => {
-      console.log("This is the reponse!", response.data);
+      console.log('This is the reponse!', response.data);
       var dataTuple = [];
       dataTuple.push(['Date', 'Popularity']);
       for (var i = 0; i < response.data.length; i++) {
@@ -36,7 +36,7 @@ class App extends React.Component {
           this.setState({end: response.data[i].date});
         }
       }
-      console.log("This is the dataTuple", dataTuple);
+      console.log('This is the dataTuple', dataTuple);
       this.setState({data: dataTuple});
       console.log(this.state.start, this.state.end, this.state.data);
     })
@@ -56,11 +56,11 @@ class App extends React.Component {
 
   render () {
     return (
-        <Layout
-          chartData={this.state}
-          collectData={this.collectData}
-          storyPoint={this.findStoryPoint(data)}
-        />
+      <Layout
+        chartData={this.state}
+        collectData={this.collectData}
+        storyPoint={this.findStoryPoint(data)}
+      />
     );
   }
 }
