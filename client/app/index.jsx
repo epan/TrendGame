@@ -26,27 +26,30 @@ class App extends React.Component {
     })
     .then( response => {
       console.log('This is the reponse!', response.data);
-      var dataTuple = [];
-      dataTuple.push(['Date', 'Popularity']);
-      for (var i = 0; i < response.data.length; i++) {
-        dataTuple.push( [response.data[i].date, response.data[i].popularity] );
-        if (i === 0) {
-          this.setState({start: response.data[i].date});
-        }
-        if (i === response.data.length - 1) {
-          this.setState({end: response.data[i].date});
-        }
-      }
-      console.log('This is the dataTuple', dataTuple);
-      this.setState({data: dataTuple});
-      console.log(this.state.start, this.state.end, this.state.data);
+      let timeline = response.data;
 
-      this.setState({ storyPoint: this.findStoryPoint(response.data) });
+      this.setState({
+        start: timeline[0].date,
+        end: timeline[timeline.length - 1].date,
+        storyPoint: this.findStoryPoint(timeline),
+        data: this.makeChartPoints(timeline)
+      });
+
+      console.log(this.state.start, this.state.end, this.state.data);
     })
     .catch(function (error) {
       console.log(error);
     });
     console.log(trend);
+  }
+
+  makeChartPoints (timeline) {
+    let dataTuple = [['Date', 'Popularity']];
+    timeline.forEach(point => {
+      dataTuple.push( [point.date, point.popularity] );
+    });
+    console.log('This is the dataTuple', dataTuple);
+    return dataTuple;
   }
 
   findStoryPoint (timeline) {
