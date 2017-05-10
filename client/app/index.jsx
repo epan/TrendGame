@@ -11,7 +11,8 @@ class App extends React.Component {
       data: [],
       start: '',
       end: '',
-      trend: ''
+      trend: '',
+      storyPoint: {}
     };
     this.collectData = this.collectData.bind(this);
   }
@@ -59,7 +60,7 @@ class App extends React.Component {
       <Layout
         chartData={this.state}
         collectData={this.collectData}
-        storyPoint={this.findStoryPoint(data)}
+        storyPoint={this.state.storyPoint}
       />
     );
   }
