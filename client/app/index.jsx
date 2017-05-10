@@ -36,7 +36,7 @@ class App extends React.Component {
 
   render () {
     return (
-        <Layout chartData={this.state.data} trend={this.state.trend} start={this.state.start} end={this.state.end} collectData={this.collectData}/>
+        <Layout chartData={this.state} collectData={this.collectData}/>
     );
   }
 }
